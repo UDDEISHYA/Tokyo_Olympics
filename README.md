@@ -14,8 +14,6 @@
 
 **An end-to-end cloud-based data engineering pipeline built on Microsoft Azure**
 
-[Features](#-features) • [Architecture](#-architecture-overview) • [Installation](#-setting-up-the-environment) • [Usage](#-usage) • [Contributing](#-contributing)
-
 </div>
 
 ---
