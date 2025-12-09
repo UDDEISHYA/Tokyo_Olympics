@@ -1,4 +1,4 @@
-# Tokyo Olympics 2021 Data Engineering Project
+# Tokyo Olympics 2020 Data Engineering Project
 <p align="center">
   <a href="" rel="noopener">
  <img width=800px height=600px src="https://media.telanganatoday.com/wp-content/uploads/2021/07/All-you-need-to-know-about-Tokyo-Olympics-2020.jpg" alt="Project logo"></a>
