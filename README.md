@@ -26,15 +26,11 @@
 - [Idea / Solution](#-idea--solution)
 - [Architecture Overview](#-architecture-overview)
 - [Technology Stack](#-technology-stack)
-- [Dependencies / Limitations](#-dependencies--limitations)
-- [Prerequisites](#-prerequisites)
 - [Setting up the Environment](#-setting-up-the-environment)
 - [Implementation Guide](#-implementation-guide)
 - [Usage](#-usage)
 - [Data Schema](#-data-schema)
-- [Future Scope](#-future-scope)
-- [Contributing](#-contributing)
-- [Acknowledgments](#-acknowledgments)
+- [Dependencies / Limitations](#-dependencies--limitations)
 
 ---
 
