@@ -56,59 +56,14 @@ This project implements a **comprehensive Azure-based data engineering solution*
 
 ### Core Solution Components
 
-
-|                                                                                                                         |                                                                                                                 |
-|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-|  1. **Automated Data Ingestion**<br>- Leverages Azure Data Factory to extract data from HTTP endpoints (GitHub repository)<br>- Implements parameterized pipelines for multiple CSV files<br>- Stores raw data in Azure Data Lake Storage Gen2 with hierarchical namespace | 2. **Scalable Data Transformation**<br>- Utilizes Azure Databricks with Apache Spark for distributed data processing<br>- Implements schema validation and type casting<br>- Performs data quality checks and basic transformations<br>- Supports both batch processing and iterative development |
-| 3. **Analytics-Ready Data Storage**<br>- Maintains separate layers for raw and transformed data (Data Lake architecture)<br>- Enables version control and data lineage tracking<br>- Optimizes data formats for query performance | 4. **SQL-Based Analytics**<br>- Integrates Azure Synapse Analytics for ad-hoc querying<br>- Provides foundation for building dashboards and visualizations<br>- Supports complex analytical queries on transformed datasets |
-
+<a href="" rel="noopener">
+<img width="990" height="480" alt="core_solution_components" src="https://github.com/user-attachments/assets/a1f404ca-9424-4842-923e-b04a7d87d92a" />
 
 ---
 
 ## 🏗️ Architecture Overview
-```
-┌─────────────────┐
-│   Data Source   │
-│  (GitHub API)   │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────────────┐
-│  Azure Data Factory     │
-│  (Ingestion Pipeline)   │
-└────────┬────────────────┘
-         │
-         ▼
-┌─────────────────────────────────┐
-│  Azure Data Lake Storage Gen2   │
-│  ┌─────────────────────────┐    │
-│  │     Raw Data Layer      │    │
-│  └───────────┬─────────────┘    │
-│              │                   │
-│              ▼                   │
-│  ┌─────────────────────────┐    │
-│  │   Azure Databricks      │    │
-│  │   (Spark Transformation)│    │
-│  └───────────┬─────────────┘    │
-│              │                   │
-│              ▼                   │
-│  ┌─────────────────────────┐    │
-│  │  Transformed Data Layer │    │
-│  └───────────┬─────────────┘    │
-└──────────────┼─────────────────┘
-               │
-               ▼
-┌─────────────────────────┐
-│  Azure Synapse Analytics│
-│  (SQL Analytics)        │
-└────────┬────────────────┘
-         │
-         ▼
-┌─────────────────────────┐
-│  Visualization Layer    │
-│  (Power BI/Tableau)     │
-└─────────────────────────┘
-```
+<img width="990" height="480" alt="core_solution_components" src="assets/tokyo_olympics_data_architecture.png" />
+
 
 ### Data Flow
 
@@ -145,59 +100,6 @@ This project implements a **comprehensive Azure-based data engineering solution*
 
 ### Data Formats
 - **CSV** - Input/output file format
-
----
-
-## ⚠️ Dependencies / Limitations
-
-### Technical Dependencies
-
-#### 1. **Azure Account Requirements**
-- Active Azure subscription (Free trial provides $200 credit for 30 days)
-- Valid payment method for account verification
-- Access to Azure Portal
-
-#### 2. **Service Quotas**
-- Regional resource availability may vary
-- Default quota limits on compute resources
-- Storage account limits (500 TB default)
-
-#### 3. **Network Requirements**
-- Stable internet connection for cloud operations
-- Access to GitHub API endpoints
-- HTTPS connectivity for Azure services
-
-### Known Limitations
-
-#### 1. **Cost Considerations**
-- Databricks compute clusters incur charges when running
-- Data Lake storage costs scale with data volume
-- Data transfer charges for egress traffic
-- Synapse Analytics has per-query or provisioned capacity costs
-
-#### 2. **Performance Constraints**
-- Single-node Databricks cluster limits processing speed
-- HTTP-based data ingestion may be slower than native integrations
-- CSV format less efficient than columnar formats (Parquet/ORC)
-
-#### 3. **Security Limitations**
-- Credentials stored in code (not production-ready)
-- No Azure Key Vault integration in base implementation
-- Anonymous authentication for GitHub repository
-
-#### 4. **Scalability Boundaries**
-- Manual pipeline creation for each data source
-- Limited error handling and retry logic
-- No automated schema evolution handling
-
-#### 5. **Data Quality**
-- Basic validation only (schema casting, null handling)
-- No comprehensive data quality frameworks
-- Limited data profiling capabilities
-
-### Regional Restrictions
-- Some Azure services may not be available in all regions
-- Compliance requirements may restrict data residency
 
 ---
 
@@ -698,6 +600,20 @@ Discipline: String - Sport discipline
 Country: String - Country representation
 Event: String - Specific event
 ```
+
+## ⚠️ Dependencies / Limitations
+
+| Category                | Item                         | Details |
+|-------------------------|------------------------------|---------|
+| Technical Dependencies  | Azure Account Requirements   | - Active Azure subscription (Free trial provides $200 credit for 30 days)<br>- Valid payment method for account verification<br>- Access to Azure Portal |
+| Technical Dependencies  | Service Quotas               | - Regional resource availability may vary<br>- Default quota limits on compute resources<br>- Storage account limits (500 TB default) |
+| Technical Dependencies  | Network Requirements         | - Stable internet connection for cloud operations<br>- Access to GitHub API endpoints<br>- HTTPS connectivity for Azure services |
+| Known Limitations       | Cost Considerations          | - Databricks compute clusters incur charges when running<br>- Data Lake storage costs scale with data volume<br>- Data transfer charges for egress traffic<br>- Synapse Analytics has per-query or provisioned capacity costs |
+| Known Limitations       | Performance Constraints      | - Single-node Databricks cluster limits processing speed<br>- HTTP-based data ingestion may be slower than native integrations<br>- CSV format less efficient than columnar formats (Parquet/ORC) |
+| Known Limitations       | Security Limitations         | - Credentials stored in code (not production-ready)<br>- No Azure Key Vault integration in base implementation<br>- Anonymous authentication for GitHub repository |
+| Known Limitations       | Scalability Boundaries       | - Manual pipeline creation for each data source<br>- Limited error handling and retry logic<br>- No automated schema evolution handling |
+| Known Limitations       | Data Quality                 | - Basic validation only (schema casting, null handling)<br>- No comprehensive data quality frameworks<br>- Limited data profiling capabilities |
+| Regional Restrictions   | Regional Service Availability | - Some Azure services may not be available in all regions<br>- Compliance requirements may restrict data residency |
 
 ---
 
